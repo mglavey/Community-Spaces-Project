@@ -4,7 +4,7 @@ from flask import render_template
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('homepage.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -21,4 +21,3 @@ def login():
             next_page = url_for('index')
         return redirect(next_page)
     return render_template('login.html', form=form)
-
