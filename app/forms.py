@@ -4,17 +4,10 @@ from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
 
 class RegistrationForm(FlaskForm):
-    email = StringField('Email', validator=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    password2 = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-    remember_me = BooleanField('Remember Me')
+    community_organizer = BooleanField('Community organizer or group looking to find available spaces to host an event.')
+    community_space = BooleanField('Community space looking to host or offer up space for an event.')
     submit = SubmitField('Register')
 
-    def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
-            raise ValidationError(
-                'That Email already exists. Choose another one. ')
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -22,6 +15,10 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Log In')
 
+
 class AdminForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     submit = SubmitField('Add User')
+
+  
+

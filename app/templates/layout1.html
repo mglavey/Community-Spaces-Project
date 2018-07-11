@@ -7,12 +7,14 @@
 
 {% block navbar %}
 <nav class="navbar navbar-inverse" role="navigation">
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="{{ url_for('login') }}">Login</a>
-            </li>
-        </ul>
+    <div class="homepage-navbar">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ url_for('login') }}">Login</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 {% endblock %}
@@ -43,6 +45,7 @@
                     <label>
                         <input type="checkbox" value="">Community space looking to host or offer up space for an event.</label>
                 </div>
+                <button type="button" class="btn btn-large btn-block btn-default">Register</button>
             </div>
         </div>
     </div> 
