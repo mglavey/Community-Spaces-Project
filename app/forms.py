@@ -8,6 +8,11 @@ class RegistrationForm(FlaskForm):
     community_space = BooleanField('Community space looking to host or offer up space for an event.')
     submit = SubmitField('Register')
 
+class CommunityOrganizerForm(FlaskForm):
+    pass
+
+class CommunitySpaceForm(FlaskForm):
+    pass
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
