@@ -1,1 +1,24 @@
-<h1>Layout 2</h1>
+{% extends 'bootstrap/base.html' %} 
+
+{% block styles %} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> 
+    {% endblock %} {% import 'bootstrap/wtf.html' as wtf %} 
+    
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="homepage-navbar">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ url_for('login') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1>Community Space Sign Up form</h1>
+{% endblock %}

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, InputRequired
 from app.models import User
 
 class RegistrationForm(FlaskForm):
@@ -9,7 +9,13 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
 class CommunityOrganizerForm(FlaskForm):
-    pass
+    organization_name = StringField('Organization Name', validators=[InputRequired()])
+    address = StringField('Street Address', validators=[InputRequired()])
+    city = StringField('City', validators=[InputRequired()])
+    state = StringField('State', validators=[InputRequired()])
+    zipcode = StringField('Zipcode', validators=[InputRequired()])
+    email = StringField('Email', validators=[InputRequired()])
+    password = PasswordField('Password', validators=[InputRequired()])
 
 class CommunitySpaceForm(FlaskForm):
     pass

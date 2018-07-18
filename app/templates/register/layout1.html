@@ -1,1 +1,63 @@
-<h1>Layout 1</h1>
+{% extends 'bootstrap/base.html' %} 
+
+{% block styles %} 
+    {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> 
+{% endblock %} 
+{% import 'bootstrap/wtf.html' as wtf %} 
+
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="homepage-navbar">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ url_for('login') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="community-organizer-registration">
+            <div class="col-md-6 col-lg-4 col-sm-10">
+                {% block app_content %}
+                <h1>Community Organizer Sign Up</h1>
+                <form action="" method="POST" role="form">
+                    {{ form.hidden_tag() }}
+                    <legend>Community Organizer Sign Up</legend>
+                    <div class="form-group">
+                        {{ form.organization_name.label }} {{ form.name(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address.label }} {{ form.address(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.city.label }} {{ form.city(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.state.label }} {{ form.state(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.zipcode.label }} {{ form.zipcode(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label }} {{ form.email(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label }} {{ form.password(class='form-control') }}
+                    </div>
+                </form>
+                {% endblock %}   
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
