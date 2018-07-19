@@ -41,7 +41,7 @@ def login():
 @app.route('/register/layout1', methods=['GET', 'POST'])
 def register_layout1():
     context = {
-        "form": CommunitySpaceForm()
+        "form": CommunityOrganizerForm()
     }
     return render_template('register/layout1.html', **context)
 
@@ -49,6 +49,6 @@ def register_layout1():
 @app.route('/register/layout2', methods=['GET', 'POST'])
 def register_layout2():
     context = {
-        "form": CommunityOrganizerForm()
+        "form": CommunitySpaceForm()
     }
     return render_template('register/layout2.html', **context)
