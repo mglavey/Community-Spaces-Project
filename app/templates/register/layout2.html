@@ -20,5 +20,40 @@
 {% endblock %}
 
 {% block content %}
-<h1>Community Space Sign Up form</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="community-space-registration">
+            <div class="col-md-6 col-lg-4 col-sm-10">
+                {% block app_content %}
+                <h1>Community Space Sign Up</h1>
+                <form action="" method="POST" role="form">
+                    {{ form.hidden_tag() }}
+                    <legend>Community Space Sign Up</legend>
+                    <div class="form-group">
+                        {{ form.space_name.label }} {{ form.space_name(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address.label }} {{ form.address(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.city.label }} {{ form.city(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.state.label }} {{ form.state(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.zipcode.label }} {{ form.zipcode(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label }} {{ form.email(class='form-control') }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label }} {{ form.password(class='form-control') }}
+                    </div>
+                </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

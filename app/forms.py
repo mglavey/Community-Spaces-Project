@@ -16,9 +16,17 @@ class CommunityOrganizerForm(FlaskForm):
     zipcode = StringField('Zipcode', validators=[InputRequired()])
     email = StringField('Email', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
+    submit = SubmitField('Register')
 
 class CommunitySpaceForm(FlaskForm):
-    pass
+    space_name = StringField('Organization Name', validators=[InputRequired()])
+    address = StringField('Street Address', validators=[InputRequired()])
+    city = StringField('City', validators=[InputRequired()])
+    state = StringField('State', validators=[InputRequired()])
+    zipcode = StringField('Zipcode', validators=[InputRequired()])
+    email = StringField('Email', validators=[InputRequired()])
+    password = PasswordField('Password', validators=[InputRequired()])
+    submit = SubmitField('Register')
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
