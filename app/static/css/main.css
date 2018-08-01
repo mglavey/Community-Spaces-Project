@@ -1,4 +1,14 @@
+.container-fluid {
+    width: 100vw;
+    height: 100vw;
+    background-color: lightseagreen;
 
+}
 .homepage {
     padding-left: 400px;
     padding-top: 200px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
