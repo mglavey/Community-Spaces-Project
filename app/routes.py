@@ -34,8 +34,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', form=form)
-
+    return render_template('index', form=form)
 
 
 @app.route('/register/layout1', methods=['GET', 'POST'])
@@ -45,10 +44,13 @@ def register_layout1():
     }
     return render_template('register/layout1.html', **context)
 
-
 @app.route('/register/layout2', methods=['GET', 'POST'])
 def register_layout2():
     context = {
         "form": CommunitySpaceForm()
     }
     return render_template('register/layout2.html', **context)
+
+@app.route('/homepage/layout1')
+def homepage_layout1():
+    return render_template('/homepage/layout1')
