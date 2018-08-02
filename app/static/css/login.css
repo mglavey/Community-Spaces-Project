@@ -1,4 +1,24 @@
 * {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Marcellus', serif;
+}
 
+.container {
+    width: 100vw;
+    height: 100vw;
+    background-color: #20B2AA;
+}
+
+.container-fluid {
+    margin-left: 400px;
+}
+.navbar {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.form-group {
+    width: 400px;
 }

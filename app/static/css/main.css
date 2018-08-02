@@ -1,12 +1,20 @@
+* {
+    font-family: 'Marcellus', serif;
+}
+
 .container-fluid {
     width: 100vw;
     height: 100vw;
-    background-color: lightseagreen;
+    background-color:#20B2AA;
 
 }
 .homepage {
     padding-left: 400px;
     padding-top: 200px;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
 }
 
 .navbar {
